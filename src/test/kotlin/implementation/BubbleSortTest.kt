@@ -15,6 +15,14 @@ internal class BubbleSortTest {
         assertEquals(orderedIntList, bubbleSort.sortIntList(unorderedIntList))
 
     @Test
+    fun `When calling sortIntList with fixed size unordered list, should return ordered list`() =
+        assertEquals(listOf(1,2,3,4,5,6,7,8), bubbleSort.sortIntList(listOf(8,7,6,5,4,3,2,1)))
+
+    @Test
+    fun `When calling sortIntList with small size unordered list, should return ordered list`() =
+        assertEquals(listOf(1,2), bubbleSort.sortIntList(listOf(2,1)))
+
+    @Test
     fun `When calling sortIntList with ordered list, should return ordered list without swapping`() =
         assertEquals(orderedIntList, bubbleSort.sortIntList(orderedIntList))
 

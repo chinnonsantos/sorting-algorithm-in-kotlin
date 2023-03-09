@@ -11,8 +11,16 @@ internal class InsertionSortTest {
     private val insertionSort = InsertionSort()
 
     @Test
-    fun `When calling sortIntList with unordered list, should return ordered list`() =
+    fun `When calling sortIntList with random size unordered list, should return ordered list`() =
         assertEquals(orderedIntList, insertionSort.sortIntList(unorderedIntList))
+
+    @Test
+    fun `When calling sortIntList with fixed size unordered list, should return ordered list`() =
+        assertEquals(listOf(1,2,3,4,5,6,7,8), insertionSort.sortIntList(listOf(8,7,6,5,4,3,2,1)))
+
+    @Test
+    fun `When calling sortIntList with small size unordered list, should return ordered list`() =
+        assertEquals(listOf(1,2), insertionSort.sortIntList(listOf(2,1)))
 
     @Test
     fun `When calling sortIntList with ordered list, should return ordered list without swapping`() =
